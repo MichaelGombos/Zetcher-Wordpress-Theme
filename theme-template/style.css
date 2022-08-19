@@ -49,7 +49,10 @@ a.sidebar-post:hover svg path, a.recent-comment:hover svg path{
 a.sidebar-post:hover p, a.recent-comment:hover p{
     color:white;
 }
-a.link {
+li.link{
+    list-style:none;
+}
+li.link a {
   display: inline-block;
   vertical-align: middle;
   padding-bottom:4px;
@@ -59,11 +62,11 @@ a.link {
   position: relative;
   overflow: hidden;
 }
-footer a.link:before , .page-hero a.link:before{
+footer li.link a:before , .page-hero li.link a:before{
     background-color:white;
 }
 
-a.link:before {
+li.link a:before {
   content: "";
   position: absolute;
   z-index: -1;
@@ -81,7 +84,7 @@ a.link:before {
   -webkit-transition-timing-function: ease-out;
   transition-timing-function: ease-out;
 }
-a.link:hover:before, a.link:focus:before, a.link:active:before {
+li.link a:hover:before, li.link a:focus:before, li.link a:active:before {
   -webkit-transform: translateY(0);
   transform: translateY(0);
 }
@@ -363,7 +366,7 @@ h1{
         align-items: center;
     }
     
-    header .links,footer .links{
+    header  .links,footer .links{
         width:100%;
         padding:100px 11px;
         display:flex;

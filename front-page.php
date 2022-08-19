@@ -2,47 +2,16 @@
    get_header();
 ?>
       
-      <div class="page-wrap">
-         <main>
-            <section id="hero">
-               <h1 class="h1">EVER<br/><span class="text-primary">ETCH</span></h1>
-               <div class="motif-square">
-                  <img src="./assets/template-images/sections/hero.png">
-                  <div class="backdrop"></div>
-               </div>
-            </section>
+
             <section class="page-content">
-               <h2 class="h2 w-normal">A <span class="text-primary">0_0</span> VISITOR??!!</h2>
-               <p>Welcome to my blog! I will mainly cover drawing progress here , but I also post book reviews, and developer logs for web development. You can check out my posts by tag <a href="#">(?)</a>, or head to the <a href="#">all posts</a> page.</p>
-            </section>
-            <section id="posts">
-            </section>
-            <section id="posts">
-               <div class="post">
-                  <h3 class="h3"><span class="text-primary">Dev Log</span> - Wordpress Theme Development</h3>
-                  <div class="h5 time text-light">
-                     <img src="./assets/icons/time.svg" class="row">
-                     <p>August 8, 2022 at 3:33pm PT</p>
-                  </div>
-                  <p class="overflow-text-2">I want to become a better web designer, and to expand my toolkit I needed to learn wordpress. I have been studying art as a hobbyist, so I figured this would be a great project to maintain accountability for art practice, and get some wordpress/php development practice with this custom theme. </p>
-                  <div class="long-button">
-                     <div class="button-top"></div>
-                     <a class=" button"href="#">Continue Reading</a>
-                  </div>
-               </div>
-               <div class="post">
-                  <h3 class="h3"><span class="text-primary">ART Practice</span> - Draw a box Ex1. - Ex12</h3>
-                  <div class="h5 time text-light">
-                     <img src="./assets/icons/time.svg" class="row">
-                     <p>August 8, 2022 at 3:33pm PT</p>
-                  </div>
-                  <p class="overflow-text-2">This is not my first rodeo when it comes to draw a box, I had attemtped to follow this course 3 years ago up to chapter 3 but dropped the course after 3 months of practice.  </p>
-                  <img class="preview-image" src="./assets/template-images/post-previews/art-practice.png">
-                  <div class="long-button">
-                     <div class="button-top"></div>
-                     <a class=" button"href="#">Continue Reading</a>
-                  </div>
-               </div>
+              <?php
+                 if( have_posts() ){
+                    while (have_posts() ){
+                    the_post();
+                    the_content();
+                    }
+                 }
+              ?>
             </section>
          </main>
          <aside>
@@ -141,18 +110,7 @@
                </a>
             </div>
          </aside>
-      </div>
-      <footer>
-         <div class="links">
-            <a href="#" > <img class="logo" src="./assets/template-logo/logo-white.svg"></a>
-            <nav>
-               <a class="link" href="#" >All</a>
-               <a class="link" href="#" >Art</a>
-               <a class="link" href="#" >Programming</a>
-               <a class="link" href="#" >Book Reviews</a>
-            </nav>
-         </div>
-      </footer>
+
       
 <?php
 get_footer();

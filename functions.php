@@ -1,8 +1,27 @@
 <?php
+
+function zetcher_theme_support(){
+    // adds dynamic title tag support
+    add_theme_support('title-tag');
+}
+
+add_action('after_setup_theme',"zetcher_theme_support");
+
+function zetcher_menus(){
+    $locations = array(
+        'primary' => "Header Navigation"   ,
+        "footer" => "Footer Navigation"
+    );
+    
+    register_nav_menus($locations);
+}
+
+add_action('init',"zetcher_menus");
+    
     $uri = get_template_directory_uri() . "/theme-template/style.css";
     $uri_m = get_template_directory_uri() . "/theme-template/magic.js";
     echo '<script>';
-    echo 'console.log(\'h20i\');';
+    echo 'console.log(\'h21i\');';
     echo 'console.log(\''.$uri.'\');';
     echo 'console.log(\''.$uri_m.'\');';
     echo 'console.log(\'https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Open+Sans:wght@300;400;700&display=swap\');';
