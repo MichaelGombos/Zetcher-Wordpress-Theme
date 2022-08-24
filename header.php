@@ -15,7 +15,7 @@
    <body>
       <header>
          <div class="links">
-            <a href="#" > <img class="logo" src="./assets/template-logo/logo-primary.svg"></a>
+            <a href="#" > <div class="logo" > </div></a>
             <nav>
                <?php
                   wp_nav_menu(

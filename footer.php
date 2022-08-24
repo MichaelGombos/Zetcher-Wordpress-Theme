@@ -3,7 +3,7 @@
       </div>
       <footer>
          <div class="links">
-            <a href="#" > <img class="logo" src="./assets/template-logo/logo-white.svg"></a>
+            <a href="#" > <div class="logo"></div></a>
             <nav>
                <?php
                   wp_nav_menu(
