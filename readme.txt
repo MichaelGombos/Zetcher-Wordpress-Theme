@@ -1,3 +1,1 @@
-ayyyyyy
-
-badabing badaboom
+# Zetcher Wordpress theme
