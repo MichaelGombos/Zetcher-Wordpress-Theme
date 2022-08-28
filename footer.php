@@ -3,7 +3,8 @@
       </div>
       <footer>
          <div class="links">
-            <a href="#" > <div class="logo"></div></a>
+            <a href="	
+<?php echo get_home_url(); ?>" > <div class="logo"></div></a>
             <nav>
                <?php
                   wp_nav_menu(

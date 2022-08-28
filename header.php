@@ -17,7 +17,6 @@
       if (is_home() ) {
       // index.php blog posts  ---------------- ----------------
       ?>
-      <h1>Archive test2</h1>
        <section id="" class="all-posts-hero page-hero">
          <span class="page-background">
             <img class="page-background-image" src="                  <?php
@@ -28,7 +27,10 @@
          </span>
          <header>
             <div class="links">
-               <a href="#" > <div class="logo"></div></a>
+               <a href="
+               	
+<?php echo get_home_url(); ?>
+" > <div class="logo"></div></a>
                <nav>
                <?php
                   wp_nav_menu(
@@ -66,12 +68,13 @@
       // POST  ---------------- ----------------
       
       ?>
-      <h1>Post test3</h1>
-         
       <section class="post-hero">
          <header>
             <div class="links">
-               <a href="#" > <div class="logo"></div></a>
+               <a href="
+               	
+<?php echo get_home_url(); ?>
+               " > <div class="logo"></div></a>
                <nav>
                <?php
                   wp_nav_menu(
@@ -107,10 +110,13 @@
       elseif (is_front_page() ) {
       //Static home page ---------------- ----------------
       ?>
-      <h1>Home test 4</h1>
             <header>
          <div class="links">
-            <a href="#" > <div class="logo" > </div></a>
+            <a href="
+            
+            	
+<?php echo get_home_url(); ?>
+" > <div class="logo" > </div></a>
             <nav>
                <?php
                   wp_nav_menu(
@@ -140,7 +146,6 @@
       elseif (get_post_type() === 'page') {
       // PAGE  ---------------- ----------------
       ?>
-      <h1>Page test 4</h1>
             <section id="" class="
                <?php
                $mykey_values = get_post_custom_values('hero-type');
@@ -164,7 +169,9 @@
                
          <header>
             <div class="links">
-               <a href="#" > <div class="logo"></div></a>
+               <a href="	
+<?php echo get_home_url(); ?>
+" > <div class="logo"></div></a>
                <nav>
                <?php
                   wp_nav_menu(

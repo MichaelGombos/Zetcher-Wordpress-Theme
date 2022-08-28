@@ -122,7 +122,10 @@ header{
 
 }
 /*need to update page logo */
-
+.logo{
+    position:relative;
+    z-index:1;
+}
   .post-hero .logo, .page-hero .logo{
      background-image: url("./assets/template-logo/logo-white.svg");
  }
@@ -275,22 +278,21 @@ h1{
     flex-direction:column;
 }
 .all-posts-hero .page-background{
-    bottom: 8.9rem;
+    height: 534px;
 }
 .book-review-hero .page-background{
-    bottom: 16.4rem;
+    /*bottom: 16.4rem;*/
 }
 .art-posts-hero .page-background{
-    bottom: 9.9rem;
+    /*bottom: 9.9rem;*/
 }
 .book-review-hero .page-background{
-    bottom: 16.4rem;
+    /*bottom: 16.4rem;*/
 }
 .page-background{
     width: 100%;
     height: 100%;
     position:absolute;
-    bottom: 21.9rem;
 }
 .page-background-image{
     position: absolute;
