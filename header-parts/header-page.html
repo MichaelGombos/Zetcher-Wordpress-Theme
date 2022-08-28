@@ -1,0 +1,30 @@
+      <section id="" class="book-review-hero page-hero">
+         <header>
+            <div class="links">
+               <a href="#" > <img class="logo" src="./assets/template-logo/logo-white.svg"></a>
+               <nav>
+               <?php
+                  wp_nav_menu(
+                    array(
+                        "menu" => "primary",
+                        "container" => "",
+                        "theme_location" => "primary",
+                        "items_wrap" => '<nav id="" class="">%3$s</ul>'
+                     ) 
+                  );
+               ?>
+               </nav>
+            </div>
+            <div class="column"></div>
+         </header>
+         <div class="hero-content">
+            <h1><span class="text-primary top">Page</span><br/><span class="bottom">Template</span></h1>
+            <div class="page-hero-motif">
+               <img class="hero-image" src="./assets/template-images/pages/book-review-hero.png">
+               <div class="backdrop"></div>
+            </div>
+         </div>
+      </section>
+
+      <section class="page-wrap">
+

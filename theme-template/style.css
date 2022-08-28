@@ -49,10 +49,10 @@ a.sidebar-post:hover svg path, a.recent-comment:hover svg path{
 a.sidebar-post:hover p, a.recent-comment:hover p{
     color:white;
 }
-li.link{
+.link{
     list-style:none;
 }
-li.link a {
+.link a , .page-numbers{
   display: inline-block;
   vertical-align: middle;
   padding-bottom:4px;
@@ -62,11 +62,11 @@ li.link a {
   position: relative;
   overflow: hidden;
 }
-footer li.link a:before , .page-hero li.link a:before{
+footer .link a:before , .page-hero li.link a:before , .page-numbers:before{
     background-color:white;
 }
 
-li.link a:before {
+li.link a:before , .page-numbers:before {
   content: "";
   position: absolute;
   z-index: -1;
@@ -85,6 +85,10 @@ li.link a:before {
   transition-timing-function: ease-out;
 }
 li.link a:hover:before, li.link a:focus:before, li.link a:active:before {
+  -webkit-transform: translateY(0);
+  transform: translateY(0);
+}
+.page-numbers:hover:before, .page-numbers:focus:before, .page-numbers:active:before {
   -webkit-transform: translateY(0);
   transform: translateY(0);
 }
@@ -118,6 +122,10 @@ header{
 
 }
 /*need to update page logo */
+
+  .post-hero .logo, .page-hero .logo{
+     background-image: url("./assets/template-logo/logo-white.svg");
+ }
 header .logo{
     background-size:cover;
     background-image: url("./assets/template-logo/logo-primary.svg");
@@ -145,7 +153,7 @@ nav a{
     margin-bottom:5px;
 }
 section{
-    padding:0px 11px;
+    /*padding:0px 11px;*/
 }
 aside{
     display:none;
@@ -175,6 +183,8 @@ footer{
     margin-bottom:0.4rem;
 }
 .post .preview-image{
+    max-height:156px;
+    object-fit:cover;
     margin-bottom:0rem;
 }
 .time{
@@ -264,8 +274,39 @@ h1{
     display:flex;
     flex-direction:column;
 }
+.all-posts-hero .page-background{
+    bottom: 8.9rem;
+}
+.book-review-hero .page-background{
+    bottom: 16.4rem;
+}
+.art-posts-hero .page-background{
+    bottom: 9.9rem;
+}
+.book-review-hero .page-background{
+    bottom: 16.4rem;
+}
+.page-background{
+    width: 100%;
+    height: 100%;
+    position:absolute;
+    bottom: 21.9rem;
+}
+.page-background-image{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    
+}
 
-
+.page-background-color{
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    
+    background: linear-gradient(-70deg, rgba(var(--primary-color-rgb), .6) 30%, rgba(var(--primary-color-rgb), .6) 30%);
+}
 /*page specific*/
 .dev-log-hero h1{
     line-height:0.9;
@@ -279,10 +320,6 @@ h1{
     color:var(--dark-color);
 }
 
-.dev-log-hero{
-    background:linear-gradient(-70deg, rgba(var(--primary-color-rgb), .6) 30%, rgba(var(--primary-color-rgb), .6) 30%), url("./assets/template-images/pages/dev-log-hero-background.png");
-    background-position: bottom 23.9rem right 50%;
-}
 
 .art-posts-hero h1 .top{
     font-size:25.2rem;
@@ -293,10 +330,6 @@ h1{
     color:var(--dark-color);
 }
 
-.art-posts-hero{
-    background:linear-gradient(-70deg, rgba(var(--primary-color-rgb), .6) 30%, rgba(var(--primary-color-rgb), .6) 30%), url("./assets/template-images/pages/art-hero-background.png");
-    background-position: bottom 13.1rem right 50%;
-}
 
 .book-review-hero h1 .top{
     font-size:16.7rem;
@@ -307,9 +340,13 @@ h1{
     color:var(--dark-color);
 }
 
-.book-review-hero{
-    background:linear-gradient(-70deg, rgba(var(--primary-color-rgb), .6) 30%, rgba(var(--primary-color-rgb), .6) 30%), url("./assets/template-images/pages/book-review-hero-background.png");
-    background-position: bottom 9.7rem right 50%;
+.all-posts-hero h1 .top{
+    font-size:26.5rem;
+    color:white;
+}
+.all-posts-hero h1 .bottom{
+    font-size:15.1rem;
+    color:var(--dark-color);
 }
 
 .page-hero{
@@ -482,6 +519,11 @@ h1{
         justify-content:space-between;
     }
     .page-hero .hero-content .hero-image{
+        width: 433px;
+    height: 229px;
+    object-fit: cover;
+        
+        
     position:relative;
     z-index:1;
     margin-left: 20px;

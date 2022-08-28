@@ -13,7 +13,102 @@
      ?>
    </head>
    <body>
-      <header>
+      <?php
+      if (is_home() ) {
+      // index.php blog posts  ---------------- ----------------
+      ?>
+      <h1>Archive test2</h1>
+       <section id="" class="all-posts-hero page-hero">
+         <span class="page-background">
+            <img class="page-background-image" src="                  <?php
+            the_post_thumbnail_url();
+            ?>">
+            <span class="page-background-color">
+            </span> 
+         </span>
+         <header>
+            <div class="links">
+               <a href="#" > <div class="logo"></div></a>
+               <nav>
+               <?php
+                  wp_nav_menu(
+                    array(
+                        "menu" => "primary",
+                        "container" => "",
+                        "theme_location" => "primary",
+                        "items_wrap" => '<nav id="" class="">%3$s</ul>'
+                     ) 
+                  );
+               ?>
+               </nav>
+            </div>
+            <div class="column"></div>
+         </header>
+         <div class="hero-content">
+            <h1>
+               
+            <span class="text-primary top">All</span><br/><span class="bottom">Posts</span>
+            </h1>
+            <div class="page-hero-motif">
+               <img class="hero-image" src="                  <?php
+                     the_post_thumbnail_url("thumbnail");
+                     ?>">
+               <div class="backdrop"></div>
+            </div>
+         </div>
+      </section>
+
+      <div class="page-wrap">
+         <main>
+      <?php
+      }
+      elseif (get_post_type() === 'post') {
+      // POST  ---------------- ----------------
+      
+      ?>
+      <h1>Post test3</h1>
+         
+      <section class="post-hero">
+         <header>
+            <div class="links">
+               <a href="#" > <div class="logo"></div></a>
+               <nav>
+               <?php
+                  wp_nav_menu(
+                    array(
+                        "menu" => "primary",
+                        "container" => "",
+                        "theme_location" => "primary",
+                        "items_wrap" => '<nav id="" class="">%3$s</ul>'
+                     ) 
+                  );
+               ?>
+               </nav>
+            </div>
+         </header>
+         <div class="hero-content">
+            <h1>ART PRACTICE</h1>
+            <h2><?php the_title(); ?></h2>
+            <p><?php echo get_the_date(); ?></p>
+            <p><strong>Tags:</strong> <?php 
+            $post_tags = get_the_tags();
+ 
+            if ( $post_tags ) {
+                foreach( $post_tags as $tag ) {
+                echo $tag->name . ', '; 
+                }
+            }
+            ?></p>
+         </div>
+      </section>
+      <div class="page-wrap">
+      <?php
+      }
+      elseif (is_front_page() ) {
+      //Static home page ---------------- ----------------
+      ?>
+      <h1>Home test 4</h1>
+            <header>
          <div class="links">
             <a href="#" > <div class="logo" > </div></a>
             <nav>
@@ -40,3 +135,75 @@
                   <div class="backdrop"></div>
                </div>
             </section>
+      <?php
+      }
+      elseif (get_post_type() === 'page') {
+      // PAGE  ---------------- ----------------
+      ?>
+      <h1>Page test 4</h1>
+            <section id="" class="
+               <?php
+               $mykey_values = get_post_custom_values('hero-type');
+               
+               foreach( $mykey_values as $key => $value ) {
+               	echo "$value ";
+               }
+
+               ?>
+            
+            page-hero">
+               
+                  <span class="page-background">
+                     <img class="page-background-image" src="                  <?php
+                     the_post_thumbnail_url();
+                     ?>">
+                     <span class="page-background-color">
+                     </span> 
+                  </span>
+
+               
+         <header>
+            <div class="links">
+               <a href="#" > <div class="logo"></div></a>
+               <nav>
+               <?php
+                  wp_nav_menu(
+                    array(
+                        "menu" => "primary",
+                        "container" => "",
+                        "theme_location" => "primary",
+                        "items_wrap" => '<nav id="" class="">%3$s</ul>'
+                     ) 
+                  );
+               ?>
+               </nav>
+            </div>
+            <div class="column"></div>
+         </header>
+         <div class="hero-content">
+            <h1>
+               
+               <?php
+               $mykey_values = get_post_custom_values('display-header');
+               
+               foreach( $mykey_values as $key => $value ) {
+               	echo "$value";
+               }
+
+               ?>
+            </h1>
+            <div class="page-hero-motif">
+               <img class="hero-image" src="                  <?php
+                     the_post_thumbnail_url("thumbnail");
+                     ?>">
+               <div class="backdrop"></div>
+            </div>
+         </div>
+      </section>
+
+      <div class="page-wrap">
+         <main>
+
+      <?php
+      }
+      ?>

@@ -1,0 +1,27 @@
+
+      <section class="post-hero">
+         <header>
+            <div class="links">
+               <a href="#" > <img class="logo" src="./assets/template-logo/logo-white.svg"></a>
+               <nav>
+               <?php
+                  wp_nav_menu(
+                    array(
+                        "menu" => "primary",
+                        "container" => "",
+                        "theme_location" => "primary",
+                        "items_wrap" => '<nav id="" class="">%3$s</ul>'
+                     ) 
+                  );
+               ?>
+               </nav>
+            </div>
+         </header>
+         <div class="hero-content">
+            <h1>ART PRACTICE</h1>
+            <h2>Draw a box Ex1. - Ex12</h2>
+            <p>August 3, 2022</p>
+            <p><strong>Tags:</strong> art, practice, drawabox</p>
+         </div>
+      </section>
+      <section class="page-wrap">
