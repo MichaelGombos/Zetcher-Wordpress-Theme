@@ -70,4 +70,24 @@ function zetcher_register_scripts(){
 }
 
 add_action( 'wp_enqueue_scripts', 'zetcher_register_scripts');
+
+function zetcher_widget_areas(){
+    
+    register_sidebar(
+        array(
+            "before_title"=>"",
+            "after_title"=>"",
+            "before_widget"=>"",
+            "after_widget"=>""
+            ),
+            array(
+                "name" => "Sidebar Area",
+                "id" => "sidebar-1",
+                "description" => "sidebar widget area"
+                )
+        );
+}
+
+
+add_action("widgets_init","zetcher_widget_areas");
 ?>
